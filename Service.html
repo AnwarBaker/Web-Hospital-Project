@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital-Service</title>
+    <link href="TEST.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root{
+            --green:#16a085;
+            --black:#444;
+            --light-color:#777;
+            --box-shadow:.5rem .5rem 0 rgba(22,160,133,.2) ;
+            --text-shadow:.4rem .4rem 0 rgba(0,0,0,.2);
+            --border: .2rem solid var(--green);
+        }
+        *{
+            font-family:'Poppins',sans-serif ;
+            margin: 0;padding: 0;
+            box-sizing: border-box;
+            outline: none;border: none;
+            text-transform:capitalize ;
+            transition: all .2s ease-out;
+            text-decoration: none;
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 7rem ;
+            scroll-behavior: smooth;
+        }
+        h1#title{
+            color: brown;
+        }
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: white;
+            border: var(--border);
+        }
+        li {
+            float: left;
+        }
+        li a {
+            display: inline-block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: lightseagreen;
+        }
+
+
+        .header .navbar .active {
+            color: var(--green);
+        }
+        .btn{
+            display: inline-block;
+            margin-top:1rem;
+            padding: .5rem;
+            padding-left: 1rem;
+            border: var(--border);
+            border-radius: .5rem;
+            box-shadow: var(--box-shadow);
+            color: var(--green);
+            cursor: pointer;
+            font-size: 1.7rem;
+        }
+        .btn span{
+            padding: .5rem;
+            padding-left: 1rem;
+            border-radius: .5rem;
+            background: var(--green);
+            color: #fff;
+            margin-left: .5rem;
+        }
+        .btn:hover{
+            background: var(--green);
+            color: #fff;
+
+        }
+        .btn:hover span{
+            color: var(--green);
+            background: #fff;
+            margin-left: 1rem;
+
+        }
+        .services .box-container{
+           display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(38rem,5fr));
+            gap: 2rem;
+        }
+        .services .box-container .box{
+            background: #ffffff;
+            border-radius: .5rem;
+            box-shadow: var(--box-shadow);
+            border: var(--border);
+            padding: 2.5rem;
+        }
+        .services .box-container .box i{
+            color: var(--green);
+            font-size: 5rem;
+            padding-bottom: .5rem;
+        }
+        .services .box-container .box h3{
+            color: var(--black);
+            font-size: 2.5rem;
+            padding: 1rem 0;
+        }
+        .services .box-container .box p{
+            color: var(--light-color);
+            font-size: 1.4rem;
+            line-height: 2;
+        }
+        .heading{
+            padding-top: 10rem;
+            font-size: 5rem;
+            text-align: center;
+            padding-bottom: 2rem;
+            text-shadow: var(--text-shadow);
+            text-transform: uppercase;
+            color: var(--black);
+            letter-spacing: .2rem;
+        }
+        .heading span{
+            text-transform: uppercase;
+            color: var(--green);
+        }
+        .header{
+            padding: 2rem 9%;
+            position: fixed;
+            top:0;left: 0;right: 0;
+            z-index: 1000;
+            box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1) ;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffff;
+
+        }
+        .header .title{
+            font-size: 2.5rem;
+            color: var(--black);
+        }
+        .header .title i{
+
+            color: var(--green);
+        }
+        .header .navbar a{
+            font-size: 1.7rem;
+            color: var(--light-color);
+            margin-left: 2rem;
+
+        }
+        .header #menu-btn{
+            font-size: 2.5rem;
+            border-radius: .5rem;
+            background: #eee;
+            color: var(--green);
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            display: none;
+        }
+        /*@media (max-width: 768px) {*/
+        /*    .header #menu-btn{*/
+        /*        display: initial;*/
+
+        /*    }*/
+        /*    .header .navbar{*/
+        /*        position: absolute;*/
+        /*        top: 115%;right: 2rem;*/
+        /*        border-radius: .5rem;*/
+        /*        box-shadow: var(--box-shadow);*/
+        /*        width: 30rem;*/
+        /*        border: var(--border);*/
+        /*        background: #ffffff;*/
+        /*        transform: scale(0);*/
+        /*        opacity:0 ;*/
+        /*        transform-origin:top right ;*/
+        /*        transition: none;*/
+
+        /*    }*/
+        /*    .header .navbar a{*/
+        /*        font-size: 2rem;*/
+        /*        display: block;*/
+        /*        margin: 2.5rem;*/
+
+        /*    }*/
+        /*    .header .navbar .activee{*/
+        /*        transform: scale(1);*/
+        /*        opacity: 1;*/
+        /*        transition:.2s ease-out ;*/
+
+        /*    }*/
+
+        /*}*/
+
+    </style>
+    <script>
+        let menu=document.querySelector('#menu-btn');
+        let navbar=document.querySelector('.navbar');
+        menu.onclick=()=>{
+            menu.classList.toggle('fa-times');
+            navbar.classList.toggle('activee');
+        }
+        window.onscroll=()=>{
+            menu.classList.remove('fa-times');
+            navbar.classList.remove('activee');
+        }
+    </script>
+</head>
+<body>
+<header class="header">
+    <a class="title"><i class="fa-solid fa-heart-pulse"></i>Hospital Name</a>
+    <nav class="navbar">
+        <a href="javascript:void(0);" onclick="window.location.href = 'Home.html';">Home</a>
+        <a href="javascript:void(0);" onclick="window.location.href = 'Service.html';" class="active">Services</a>
+        <a href="javascript:void(0);" onclick="window.location.href = 'Doctor.html';">Doctor</a>
+    </nav>
+    <div id="menu-btn" class="fas fa-bars"></div>
+</header>
+
+<section class="services" id="services">
+    <h1 class="heading">our <span>services</span></h1>
+
+
+    <div class="box-container">
+        <div class="box">
+            <i class="fas fa-notes-medical"></i>
+            <h3>free checkups</h3>
+            <p>Free health check-ups include the NHS Health Check in the UK and comprehensive medical examinations offered by some health insurance policies.</p>
+            <a href="https://en.wikipedia.org/wiki/Check-Up" class="btn">learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+        <div class="box">
+            <i class="fas fa-ambulance"></i>
+            <h3>24/7 Ambulance</h3>
+            <p>24/7 ambulance services provide swift and reliable emergency medical assistance, ensuring prompt response during critical situations.</p>
+            <a href="https://en.wikipedia.org/wiki/Ambulance" class="btn">learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+        <div class="box">
+            <i class="fas fa-user-md"></i>
+            <h3>expert doctors</h3>
+            <p>Expert doctors are available online 24/7 to provide medical advice and consultations on various health concerns. </p>
+            <a href="https://en.wikipedia.org/wiki/Doctor_of_Medicine" class="btn">learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+        <div class="box">
+            <i class="fas fa-pills"></i>
+            <h3>medicines</h3>
+            <p>Apollo Pharmacy offers online medicine orders with fast delivery, while HealthWarehouse.com provides a wide variety of medications. </p>
+            <a href="https://en.wikipedia.org/wiki/Medicine" class="btn">learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+        <div class="box">
+            <i class="fas fa-procedures"></i>
+            <h3>bed facility</h3>
+            <p>Swing beds are available in small, rural hospitals, allowing patients to receive both acute care and skilled nursing facility (SNF) care without leaving their initial hospital.</p>
+            <a href="https://en.wikipedia.org/wiki/Hospital_bed" class="btn">learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+        <div class="box">
+            <i class="fas fa-heartbeat"></i>
+            <h3>total care</h3>
+            <p>Nebraska Total Care provides coordinated and compassionate health services to improve the well-being of its beneficiaries.</p>
+            <a href="https://en.wikipedia.org/wiki/Total_care" class="btn">learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+    </div>
+</section>
+</body>
+</html>

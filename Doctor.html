@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital-Doctor</title>
+    <link rel="stylesheet" type="text/css" href="TEST.css" media=>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root{
+            --green:#16a085;
+            --black:#444;
+            --light-color:#777;
+            --box-shadow:.5rem .5rem 0 rgba(22,160,133,.2) ;
+            --text-shadow:.4rem .4rem 0 rgba(0,0,0,.2);
+            --border: .2rem solid var(--green);
+        }
+        *{
+            font-family:'Poppins',sans-serif ;
+            margin: 0;padding: 0;
+            box-sizing: border-box;
+            outline: none;border: none;
+            text-transform:capitalize ;
+            transition: all .2s ease-out;
+            text-decoration: none;
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 7rem ;
+            scroll-behavior: smooth;
+        }
+        h1{
+            color: brown;
+        }
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: white;
+            border: var(--border);
+        }
+        li {
+            float: left;
+        }
+        li a {
+            display: inline-block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: lightseagreen;
+        }
+
+        .header .navbar .active {
+           color: var(--green);
+        }
+        .header{
+            padding: 2rem 9%;
+            position: fixed;
+            top:0;left: 0;right: 0;
+            z-index: 1000;
+            box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1) ;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+
+        }
+        
+        .header .title{
+            font-size: 2.5rem;
+            color: var(--black);
+        }
+        .header .title i{
+
+            color: var(--green);
+        }
+        .header .navbar a{
+            font-size: 1.7rem;
+            color: var(--light-color);
+            margin-left: 2rem;
+
+        }
+        .heading{
+            padding-top: 10rem;
+            font-size: 5rem;
+            text-align: center;
+            padding-bottom: 2rem;
+            text-shadow: var(--text-shadow);
+            text-transform: uppercase;
+            color: var(--black);
+            letter-spacing: .2rem;
+        }
+
+        .heading span{
+            text-transform: uppercase;
+            color: var(--green);
+        }
+        .doctors .box-container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(38rem,5fr));
+            gap: 2rem;
+        }
+        .doctors .box-container .box{
+            text-align: center;
+            background: #ffffff;
+            border-radius: .5rem;
+            border: var(--border);
+            box-shadow: var(--box-shadow);
+            padding: 2rem;
+        }
+        .doctors .box-container .box img{
+            height: 20rem;
+            width: 20rem;
+            border: var(--border);
+            border-radius:.5rem ;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .doctors .box-container .box h3{
+            color: var(--black);
+            font-size: 2.5rem;
+        }
+        .doctors .box-container .box span{
+            color: var(--green);
+            font-size: 1.5rem;
+        }
+        .doctors .box-container .box .share{
+            padding-top: 2rem;
+        }
+        .doctors .box-container .box .share a{
+            height: 5rem;
+            width: 5rem;
+            line-height: 4.5rem;
+            font-size: 2rem;
+            color: var(--green);
+            border-radius: .5rem;
+            border: var(--border);
+            margin: .3rem;
+
+        }
+        .doctors .box-container .box .share a:hover{
+            background: var(--green);
+            color: #ffffff;
+            box-shadow: var(--box-shadow);
+        }
+        .header #menu-btn{
+            font-size: 2.5rem;
+            border-radius: .5rem;
+            background: #eee;
+            color: var(--green);
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            display: none;
+
+        }
+
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <a class="title"><i class="fa-solid fa-heart-pulse"></i>Hospital Name</a>
+    <nav class="navbar">
+        <a href="javascript:void(0);" onclick="window.location.href = 'Home.html';">Home</a>
+        <a href="javascript:void(0);" onclick="window.location.href = 'Service.html';" >Services</a>
+        <a href="javascript:void(0);" onclick="window.location.href = 'Doctor.html';" class="active">Doctor</a>
+    </nav>
+    <div id="menu-btn" class="fas fa-bars"></div>
+</header>
+<!--<h1>Hospital Name</h1>-->
+<!--<ul>-->
+<!--    <li><a href="javascript:void(0);" onclick="window.location.href = 'Home.html';" >Home</a></li>-->
+<!--    <li><a href="javascript:void(0);" onclick="window.location.href = 'Service.html';">Services</a></li>-->
+<!--    <li><a href="javascript:void(0);" onclick="window.location.href = 'Doctor.html';" class="active">Doctor</a></li>-->
+<!--</ul>-->
+<section class="doctors" id="doctors">
+    <h1 class="heading">our <span>doctors</span></h1>
+
+
+    <div class="box-container">
+        <div class="box">
+            <img src="doc-1.jpg"alt="">
+            <h3>Ibraheem hassoun</h3>
+            <span>expert doctor</span>
+            <div class="share">
+                <a href="" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="" class="fab fa-instagram"></a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="doc-2.jpg"alt="">
+            <h3>john doe</h3>
+            <span>expert doctor</span>
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="doc-3.jpg"alt="">
+            <h3>john doe</h3>
+            <span>expert doctor</span>
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="doc-4.jpg"alt="">
+            <h3>john doe</h3>
+            <span>expert doctor</span>
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="doc-5.jpg"alt="">
+            <h3>john doe</h3>
+            <span>expert doctor</span>
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="doc-6.jpg"alt="">
+            <h3>john doe</h3>
+            <span>expert doctor</span>
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</section>
+<!--<p style="padding:7rem; font-size:4rem; "><b>you are in doctor page</b> </p>
+-->
+
+</body>
+</html>

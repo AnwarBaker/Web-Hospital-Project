@@ -1,0 +1,181 @@
+
+.e {
+width: 100%;
+    position: relative;
+
+    text-align: left;
+    color :black;
+border :2px blue solid;
+}
+.e img{
+    position: static;
+
+    width :100%;
+    bottom: 0;
+    height: auto;
+    opacity:.8;
+}
+
+.f{
+position : absolute;
+color:black;
+    font-size: 5rem;
+    bottom: 150px;
+    left: 16px;
+}
+
+
+div >h4{
+
+    text-align: center;
+    color :black;
+}
+div >p{
+    text-align: left;
+    bottom: 150px;
+color :black;
+    font-size: 3rem;
+    left: 0px;
+
+}
+div> :hover{
+    color : #993333;
+
+
+}
+button {
+
+    background-color: #04AA6D;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    padding: 20px 20px;
+
+}
+#t{
+
+    background-color: darkblue;
+    border-radius: 80% ;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    padding: 20px 20px;
+
+}
+
+#hh:hover{
+    background-color: white;
+    color: var(--green);
+}
+#gg:hover{
+     background-color: white;
+
+     color: var(--green);
+ }
+#t:hover{
+    background-color: white;
+    color: green;
+}
+#y:hover{
+    background-color: white;
+    color: var(--green);
+}
+textarea{
+    position :absolute;;
+    border : 5px black solid;
+    left :200px;
+  top :1245px;
+
+}
+label{
+    font-size: 2rem;
+    color: black;
+}
+.an{
+    width :400px;
+    height: 400px;
+    background-color: white;
+    border :1px black solid;
+    left : 20px;
+}
+.ani{
+    position: absolute;
+    width :400px;
+    height: 400px;
+    color: black;
+    font-size: 1rem;
+    font-family: arial;
+    animation-name: myan;
+    animation-duration:10s ;
+}
+
+@keyframes myan {
+    0%{display: none}
+    90%{display: block}
+}
+.heading{
+    padding-top: 10rem;
+    font-size: 5rem;
+    text-align: center;
+    padding-bottom: 2rem;
+    text-shadow: var(--text-shadow);
+    text-transform: uppercase;
+    color: var(--black);
+    letter-spacing: .2rem;
+}
+.heading span{
+    text-transform: uppercase;
+    color: var(--green);
+}
+
+.header .navbar .active {
+    color: var(--green);
+}
+.header{
+    padding: 2rem 9%;
+    position: fixed;
+    top:0;left: 0;right: 0;
+    z-index: 1000;
+    box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1) ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+
+}
+
+.header .title{
+    font-size: 2.5rem;
+    color: var(--black);
+}
+.header .title i{
+
+    color: var(--green);
+}
+
+.header .navbar a{
+    font-size: 1.7rem;
+    color: var(--light-color);
+    margin-left: 2rem;
+
+}
+p.s
+{
+    font-size: 5rem;
+
+}
+p.s :hover{
+
+    color : blue;
+    border : 2px blue solid ;
+}
+.header #menu-btn{
+    font-size: 2.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color: var(--green);
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+
+}
+
